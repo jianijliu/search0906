@@ -8,7 +8,7 @@ from datetime import datetime
 import socket
 import os
 import webbrowser
-from serpapi import GoogleSearch
+from serpapi import BaiduSearch
 from st_click_detector import click_detector
 from streamlit.components.v1 import html
 
@@ -51,7 +51,7 @@ sheet_url = st.secrets["private_gsheets_url"]
 sheet = client.open_by_url(sheet_url).sheet1   # select a worksheet
 
 
-# Set Google Search Key (reference: https://github.com/serpapi/google-search-results-python)
+# Set Google Search Key (reference: https://github.com/serpapi/google-search-results-python#search-baid)
 Google_API_KEY = st.secrets['Google_API_KEY']
 
 if user_id: 
@@ -66,7 +66,7 @@ if user_id:
         # Define the search search
         search_result = []
         while len(search_result) < 10:
-            search = GoogleSearch(params)
+            search = BaiduSearch(params)
             json_results = search.get_json()
             search_result = json_results['organic_results']
         
