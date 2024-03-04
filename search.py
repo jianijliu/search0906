@@ -8,17 +8,16 @@ from datetime import datetime
 import socket
 import os
 import webbrowser
-from serpapi import GoogleSearch
+from serpapi import BaiduSearch
 from st_click_detector import click_detector
-from streamlit.components.v1 import HTML
+from streamlit.components.v1 import html
 
+#### Demo: https://search-test-jiani.streamlit.app/
 if "disabled" not in st.session_state:
     st.session_state["disabled"] = False
 
 def disable():
     st.session_state["disabled"] = True
-
-#### Demo: https://search-test-jiani.streamlit.app/
 
 #### part 0. main page setting
 st.set_page_config(page_title='Optima', page_icon=':robot:')
