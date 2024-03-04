@@ -51,13 +51,18 @@ client = gspread.authorize(credentials)
 sheet_url = st.secrets["private_gsheets_url"]
 sheet = client.open_by_url(sheet_url).sheet1   # select a worksheet
 
+if "disabled" not in st.session_state:
+    st.session_state["disabled"] = False
+
+def disable():
+    st.session_state["disabled"] = True
 
 # Set Google Search Key (reference: https://github.com/serpapi/google-search-results-python#search-baid)
 Google_API_KEY = st.secrets['Google_API_KEY']
 
 if user_id: 
     # query = st.text_input(label=" ", placeholder="ask Lumina.AI")
-    query = st.chat_input("ask Optima")
+    query = st.chat_input("ask Optima", disabled=st.session_state.disabled, on_change=disable)
     
     if query:  # Activates the code below by hitting Enter/Return in the search textbox
         result_str = ""
