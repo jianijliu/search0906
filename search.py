@@ -8,7 +8,7 @@ from datetime import datetime
 import socket
 import os
 import webbrowser
-from serpapi import BaiduSearch
+from serpapi import GoogleSearch
 from st_click_detector import click_detector
 from streamlit.components.v1 import html
 
