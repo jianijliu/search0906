@@ -62,7 +62,8 @@ Google_API_KEY = st.secrets['Google_API_KEY']
 
 if user_id: 
     # query = st.text_input(label=" ", placeholder="ask Lumina.AI")
-    query = st.chat_input(placeholder="ask Optima", disabled=st.session_state.disabled, on_submit=disable)
+    # query = st.chat_input(placeholder="ask Optima", disabled=st.session_state.disabled, on_submit=disable)
+    query = st.chat_input("ask Optima")
     
     if query:  # Activates the code below by hitting Enter/Return in the search textbox
         result_str = ""
