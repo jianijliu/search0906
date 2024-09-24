@@ -2,7 +2,6 @@ import streamlit as st
 from google.oauth2 import service_account
 from gsheetsdb import connect
 import streamlit.components.v1 as components
-from streamlit_gsheets import GSheetsConnection
 import pandas as pd
 import gspread
 from datetime import datetime
