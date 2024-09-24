@@ -100,8 +100,8 @@ if user_id:
             else:  # more than 10 results
                 pass
 
-        row = [user_id, input_time, query, output_time, save_str]
-        sheet.insert_row(row)
+        #row = [user_id, input_time, query, output_time, save_str]
+        #sheet.insert_row(row)
         st.markdown(f'{result_str}', unsafe_allow_html=True)
 
 else:    
