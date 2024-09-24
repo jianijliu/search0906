@@ -10,7 +10,7 @@ import os
 import webbrowser
 from serpapi import GoogleSearch
 from st_click_detector import click_detector
-from streamlit.components.v1 import HTML
+from streamlit.components.v1 import html
 
 #### Demo: https://search-test-jiani.streamlit.app/
 #### part 0. main page setting
