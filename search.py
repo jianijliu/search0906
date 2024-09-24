@@ -59,6 +59,7 @@ if user_id:
     query = st.chat_input("ask Optima")
 
     if query:  # Activates the code below by hitting Enter/Return in the search textbox
+        sheet.insert_row(query) # -- test --
         result_str = ""
         input_time = str(datetime.now())
         params = {"q": query, "device": "desktop", "hl": "en", "gl": "us", "num": "20", "api_key": Google_API_KEY, "output": "HTML"}
