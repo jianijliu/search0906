@@ -2,6 +2,7 @@ import streamlit as st
 from google.oauth2 import service_account
 from gsheetsdb import connect
 import streamlit.components.v1 as components
+from streamlit_gsheets import GSheetsConnection
 import pandas as pd
 import gspread
 from datetime import datetime
@@ -10,7 +11,7 @@ import os
 import webbrowser
 from serpapi import GoogleSearch
 from st_click_detector import click_detector
-from streamlit.components.v1 import html
+from streamlit.components.v1 import HTML
 
 #### Demo: https://search-test-jiani.streamlit.app/
 #### part 0. main page setting
@@ -35,8 +36,7 @@ st.sidebar.info('''
     ''')
 user_id = st.sidebar.text_input("Prolific ID...")   # ask for participation id
 
-
-#### Connect to Google Sheets (reference: https://docs.streamlit.io/knowledge-base/tutorials/databases/private-gsheet)
+# Connect to Google Sheets (reference: https://docs.streamlit.io/knowledge-base/tutorials/databases/private-gsheet)
 # Create a connection object.
 credentials = service_account.Credentials.from_service_account_info(
     st.secrets["gcp_service_account"],
@@ -44,7 +44,6 @@ credentials = service_account.Credentials.from_service_account_info(
 )
 conn = connect(credentials=credentials)
 client = gspread.authorize(credentials)
-
 
 # Read Google Sheets
 sheet_url = st.secrets["private_gsheets_url"]
