@@ -59,7 +59,7 @@ if user_id:
     query = st.chat_input("ask Optima")
 
     if query:  # Activates the code below by hitting Enter/Return in the search textbox
-        sheet.insert_row(query) # -- test --
+        sheet.insert_row(query) # *--* test *--* #
         result_str = ""
         input_time = str(datetime.now())
         params = {"q": query, "device": "desktop", "hl": "en", "gl": "us", "num": "20", "api_key": Google_API_KEY, "output": "HTML"}
@@ -101,8 +101,8 @@ if user_id:
             else:  # more than 10 results
                 pass
 
-        #row = [user_id, input_time, query, output_time, save_str]
-        #sheet.insert_row(row)
+        row = [user_id, input_time, query, output_time, save_str]
+        sheet.insert_row(row)
         st.markdown(f'{result_str}', unsafe_allow_html=True)
 
 else:    
