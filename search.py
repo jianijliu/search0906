@@ -105,4 +105,4 @@ if user_id:
 else:    
     st.markdown("\n")
     st.markdown("<h2 style='text-align: center;'>Please read instructions in the sidebar carefully and \n type in your Prolific ID to initiate this service!</h2>", unsafe_allow_html=True)
-    st.markdown("<h3 style='text-align: center;'>(You can search as much as you want using Optima.)</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center;'></h3>", unsafe_allow_html=True) # (You can search as much as you want using Optima.)
