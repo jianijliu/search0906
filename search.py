@@ -66,6 +66,7 @@ if user_id:
         # Define the search search
         search_result = []
         while len(search_result) < 10:
+            print(query)
             search = GoogleSearch(params)
             json_results = search.get_json()
             search_result = json_results['organic_results']
